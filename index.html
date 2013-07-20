@@ -1,11 +1,20 @@
 <!DOCTYPE html>
-
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title></title>
+        <title>Simple Social Counter</title>
+        <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+        <script src="jquery.ssc.js"
+                type="text/javascript"></script>
+        <script>
+            $(document).ready(function()
+            {
+             $('#results').ssc();   
+            });
+            
+        </script>
     </head>
     <body>
-        
+        <span id="results"></span>
     </body>
 </html>
