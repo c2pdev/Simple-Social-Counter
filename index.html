@@ -17,18 +17,26 @@
             }(document, 'script', 'facebook-jssdk'));
         </script>
         <script>
-            $(document).ready(function()
+            $(document).ready(function ()
             {
-             $('#results').ssc();   
+                $('#results').ssc();
+                $('#results1').ssc({social:'twitter,linkedin,facebook' });
+                $('#results2').ssc();
+                $('.element').each(function ()
+                {
+                    var address = $(this).find('a').attr("href");
+            
+                    $(this).find('.results_loop').ssc({ url: address,social:'linkedin,twitter,facebook' });
+                });
             });
             
         </script>
         <style>
-                 .ssc_main_twitter,.ssc_main_facebook, .ssc_main_linkedin {
+                 .ssc_main_twitter,.ssc_main_facebook, .ssc_main_linkedin{
                  padding: 8px;
                  float: left;
                  }
-                 .ssc_count_twitter,.ssc_count_facebook, .ssc_count_linkedin {
+                 .ssc_count_twitter,.ssc_count_facebook, .ssc_count_linkedin{
             position: relative;
             bottom: 3px;
             font-size: large;
@@ -57,8 +65,21 @@
                 data-url="http://ssc.cotygadasz.pl/"
                 data-counter="right"></script>
 
-        <hr>
-        <h1>Wynik działania wtyczki</h1>
-        <span id="results"></span>
+        <div style="width: 100%;display: block;float: left;">
+            <h1>Wynik działania wtyczki</h1>
+            <span id="results"></span>
+        </div>
+        <div style="width: 100%;">
+            <h1>Test wielokrotnego wywołania dla tego samego url</h1>
+            <div style="display: block;float: left;width: 100%;"><span id="results1"></span></div>
+            <div style="display: block;float: left;width: 100%;"><span id="results2"></span></div>
+        </div>
+        <div style="width: 100%;">
+            <h1>Test pętli</h1>
+            <div style="display: block;float: left;width: 100%;"
+                 class="element"><a href="http://ssc.cotygadasz.pl/test1.html">Wynik dla test1.html</a><span class="results_loop"></span></div>
+            <div style="display: block;float: left;width: 100%;"
+                 class="element"><a href="http://ssc.cotygadasz.pl/test2.html">Wynik dla test2.html</a><span class="results_loop"></span></div>
+        </div>
     </body>
 </html>

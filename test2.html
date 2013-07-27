@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Simple Social Counter</title>
+        <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+      
+        <div id="fb-root"></div>
+        <script>
+            (function(d, s, id) {
+              var js, fjs = d.getElementsByTagName(s)[0];
+              if (d.getElementById(id)) return;
+              js = d.createElement(s); js.id = id;
+              js.src = "//connect.facebook.net/pl_PL/all.js#xfbml=1";
+              fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        </script>
+        <script>
+            $(document).ready(function()
+            {
+             $('#results').ssc();   
+            });
+            
+        </script>
+        <style>
+                 .ssc_main_twitter,.ssc_main_facebook, .ssc_main_linkedin {
+                 padding: 8px;
+                 float: left;
+                 }
+                 .ssc_count_twitter,.ssc_count_facebook, .ssc_count_linkedin {
+            position: relative;
+            bottom: 3px;
+            font-size: large;
+            font-weight: bold;
+            color: #333;
+            margin-left: 3px;
+                 }
+        </style>
+    </head>
+    <body>
+        <div class="fb-like"
+             data-href="http://ssc.cotygadasz.pl/test2.html"
+             data-send="false"
+             data-layout="button_count"
+             data-width="450"
+             data-show-faces="true"></div>
+        <a href="https://twitter.com/share"
+           class="twitter-share-button"
+           data-url="http://ssc.cotygadasz.pl/test2.html">Tweet</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+        <script src="//platform.linkedin.com/in.js"
+                type="text/javascript">
+            lang: en_US
+        </script>
+        <script type="IN/Share"
+                data-url="http://ssc.cotygadasz.pl/test2.html"
+                data-counter="right"></script>
+
+        <hr>
+        <h1>Wynik działania wtyczki</h1>
+        <span id="results"></span>
+    </body>
+</html>
