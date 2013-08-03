@@ -1,3 +1,8 @@
+//Simple Social Counter
+//Author: Code2prog
+//Website: http://ssc.cotygadasz.pl
+
+//Version: 1.0.2
 (function ($)
 {
     $.fn.ssc = function (options)

@@ -67,6 +67,14 @@ Plugin support Linkedin, Facebook and Twitter
 
                 </ul>
                 <div class="row">
+                <h5>Additional parameters</h5>
+                    <b>url</b> - you can use to define url to pull the info for social share count. If you don't define any url plugin will get results for current url<br><br>
+                    <b>social</b> - choose social network to display. You can choose all three possible values (facebook, linkedin, twitter) or select specific one. If you do not define any social network script will dispay all.<br>Note: order specified in the script will determinate social network display order<br><br>
+                    <b>facebook_ico</b> - use this parameter to set custom icon for Facebook count. If you don't set this parameter script display default icon from image directory<br><br>
+                    <b>twitter_ico</b> - use this parameter to set custom icon for Twitter count. If you don't set this parameter script display default icon from image directory<br><br>
+                    <b>linkedin_ico</b> - use this parameter to set custom icon for Linkedin count. If you don't set this parameter script display default icon from image directory<br>
+                </div>
+                <div class="row">
                     <h5>Sample CSS styles</h5>
                     <pre>
 .ssc_main_twitter,.ssc_main_facebook, .ssc_main_linkedin{
@@ -98,7 +106,7 @@ $(document).ready(function ()
                     <h5>Single call with custom additional parameters</h5>
                     <pre>
 $('#id_your_element').ssc({
-url:'test1.html',
+url:'http://ssc.cotygadasz.pl/test1.html',
 social:'linkedin,facebook,twitter' ,
 facebook_ico:'your_custom_ico_url',
 linkedin_ico:'your_custom_ico_url',
@@ -111,11 +119,12 @@ twitter_ico:'your_custom_ico_url'
                     <h5>Multiple call in loop</h5>
 
                     <pre>
-$('.element').each(function ()
-                {
-                    var address = $(this).find('a').attr("href");
-            
-                    $(this).find('.results_loop').ssc({ url: address,social:'linkedin,twitter' });
+$('.element').each(function (){
+var address = $(this).find('a').attr("href");
+$(this).find('.results_loop').ssc({ 
+url: address,
+social:'linkedin,twitter' 
+});
                 });
                     </pre>
                     <div style="display: block;float: left;width: 100%;"
@@ -145,8 +154,10 @@ $('.element').each(function ()
                         data-url="http://ssc.cotygadasz.pl/"
                         data-counter="right"></script>
                 <h4>Download from GitHub</h4>
-                <a href=""
-                   class="small button">Download</a>
+                <a href="https://github.com/fotex/Simple-Social-Counter/tree/master/production"
+                   class="small button" target="_blank">Download</a><br>
+                <h3>If you have questions send me email to:</h3><br>
+                <b>dawidmyszczyszyn(at)gmail.com</b>
             </div>
         </div>
         <footer class="row">
@@ -175,7 +186,7 @@ $('.element').each(function ()
                         {
                             $('#results').ssc();
                             $('#results2').ssc({
-                                url:'test1.html',
+                                url:'http://ssc.cotygadasz.pl/test1.html',
             social:'linkedin,facebook,twitter' ,
             facebook_ico:'img/facebook.png',
             linkedin_ico:'img/linkedin.png',
